@@ -4,17 +4,13 @@
 
 // using https://svgomg.wolfdevs.com/ to add prefix to ids of svg
 
-import type { FlagName } from './index'
-interface Props {
-  flagName: FlagName,
-  shape?: '1x1' | '4x3',
-  width?: number,
-}
+import type { FlagType } from './index'
+type Props = FlagType
 
 const {
   flagName,
   shape = '4x3',
-  width = 32,
+  width = "32px",
 } = Astro.props
 
 const svgFiles = import.meta.glob('./svg/*/*.svg', { as: 'raw'});

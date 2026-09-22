@@ -526,7 +526,28 @@ const allFlags = [
   'zw',
 ]
 
+/** arguments to <Flag/> component */
+export interface FlagType {
+  /** name of the flag, as defined by ISO 3166-1 alpha-2 code
+   * (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+   * @example fr stands for france
+   * @example gb stands for great britain (united kingdom)
+  */
+  flagName: FlagName,
+
+  /** shape of the flag, either square (1x1) or rectangular (4x3).
+   * @defaut '4x3'
+   */
+  shape?: '1x1' | '4x3',
+
+  /** width of the flag
+   * @default '32px'
+   */
+  width?: string,
+}
+
 export { allFlags }
 
 /** Astro components exports, used to create a swiper */
+// @ts-expect-error Astro component imports are handled by Astro's type checker.
 export { default as Flag } from './Flag.astro';
