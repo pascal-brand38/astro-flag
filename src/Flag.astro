@@ -13,7 +13,7 @@ const {
   width = "32px",
 } = Astro.props
 
-const svgFiles = import.meta.glob('./svg/*/*.svg', { as: 'raw'});
+const svgFiles = import.meta.glob('./svg/*/*.svg', { query: '?raw', import: 'default' });
 
 const getSvg = (name: string) => {
   const path = name;
