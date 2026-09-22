@@ -1,0 +1,45 @@
+{
+  "name": "astro-flag",
+  "version": "0.0.0",
+  "description": "Add a country flag in Astro, as an inlined svg",
+  "type": "module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pascal-brand38/astro-flag.git",
+    "directory": "astro-flag"
+  },
+  "author": "Pascal Brand",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pascal-brand38/astro-flag/issues"
+  },
+  "homepage": "https://pascal-brand38.github.io/astro-dev/packages/astro-flag/",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    }
+  },
+  "files": [
+    "index.ts",
+    "src/**"
+  ],
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9.6.5",
+    "pnpm": ">=7.1.0"
+  },
+  "packageManager": "pnpm@10.30.3",
+  "keywords": [
+    "flag",
+    "country",
+    "svg",
+    "withastro",
+    "astro-component"
+  ],
+  "devDependencies": {
+    "astro": "^7.3.3",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,45 @@
+---
+// Copyright (c) Pascal Brand
+// MIT License
+
+// using https://svgomg.wolfdevs.com/ to add prefix to ids of svg
+
+import type { FlagName } from './index'
+interface Props {
+  flagName: FlagName,
+  shape?: '1x1' | '4x3',
+  width?: number,
+}
+
+const {
+  flagName,
+  shape = '4x3',
+  width = 32,
+} = Astro.props
+
+const svgFiles = import.meta.glob('./svg/*/*.svg', { as: 'raw'});
+
+const getSvg = (name: string) => {
+  const path = name;
+  if (path in svgFiles) {
+    return svgFiles[path](); // Returns a Promise resolving to the string content
+  }
+};
+
+// take the original svg file, and then adjust its width
+const originalSvg = await getSvg(`./svg/${shape}/${flagName}.svg`)
+const updatedSvg = originalSvg!.
+  replace('width="21" height="15"', `viewBox="0 0 21 15" width="${width}" data-astro-flag`).
+  replace('width="15" height="15"', `viewBox="0 0 15 15" width="${width}" data-astro-flag`)
+
+---
+
+<Fragment set:html={updatedSvg} />
+
+<style is:global>
+svg[data-astro-flag] {
+  /* align the svg vertically */
+  display: inline-block;
+  vertical-align: middle;
+}
+</style>
