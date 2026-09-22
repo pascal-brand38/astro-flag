@@ -1,7 +1,7 @@
 {
   "name": "astro-flag",
   "version": "0.0.0",
-  "description": "Add a country flag in Astro, as an inlined svg",
+  "description": "Add a responsive country flag in Astro, as an inlined svg",
   "type": "module",
   "main": "index.js",
   "repository": {
