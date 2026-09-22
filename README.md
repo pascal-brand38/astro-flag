@@ -1,4 +1,4 @@
-![Texte alternatif](https://raw.githubusercontent.com/pascal-brand38/astro-flag/images/astro-logo.png)
+![Texte alternatif](https://raw.githubusercontent.com/pascal-brand38/astro-flag/main/images/astro-flag.png)
 
 # Astro Flag
 
