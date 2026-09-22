@@ -24,9 +24,7 @@ const getSvg = (name: string) => {
 
 // take the original svg file, and then adjust its width
 const originalSvg = await getSvg(`./svg/${shape}/${flagName}.svg`)
-const updatedSvg = originalSvg!.
-  replace('width="21" height="15"', `viewBox="0 0 21 15" width="${width}" data-astro-flag`).
-  replace('width="15" height="15"', `viewBox="0 0 15 15" width="${width}" data-astro-flag`)
+const updatedSvg = originalSvg!.replace('<svg', `<svg width="${width}" data-astro-flag`)
 
 ---
 
